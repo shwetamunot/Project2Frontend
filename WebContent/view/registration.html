@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+{{error.message}}
+<body>
+<form>
+<pre>
+<div ng-if="error.code==2">{{error.message}}<style="color:red"></style></div>
+Enter Username<input type="text" ng-model="user.username"><br>
+Enter Password<input type="password" ng-model="user.password"><br>
+Enter Firstname<input type="text" ng-model="user.firstname"><br>
+Enter Lastname<input type="text" ng-model="user.lastname"><br>
+
+<div ng-if="error.code==3">{{error.message}}<style="color:red"></style></div>
+Enter Emailid<input type="email" ng-model="user.email"><br>
+Enter phone number<input type="text" ng-model="user.phonenumber"><br>
+select role<input type="radio" ng-model="user.role" value="Student">student<br>
+<input type="radio" ng-model="user.role" value="Employee">employee<br>
+<input type="radio" ng-model="user.role" value="Alumini">alumini<br>
+<input type="submit" value="Register" ng-click="registerUser()">
+</pre>
+</form>
+</body>
+
+</html>
+
+
