@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<form class="form-horizontal">
+<div class="form-group">
+    <label class="control-label col-sm-2" for="jobTitle">Job Title:</label>
+    <div class="col-sm-7">
+      <input type="text" class="form-control" id="jobTitle" placeholder="Enter Title" ng-model="job.jobTitle">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="jobDescription">Job Description:</label>
+    <div class="col-sm-7">
+      <input type="text" class="form-control" id="jobDescription" placeholder="Enter Description" ng-model="job.jobDescription">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="skillsRequired">Skills Required:</label>
+    <div class="col-sm-7"> 
+      <input type="text" class="form-control" id="skillsRequired" placeholder="Enter skill" ng-model="job.skillsRequired">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="location">Location:</label>
+    <div class="col-sm-7"> 
+      <input type="text" class="form-control" id="location" placeholder="Enter location" ng-model="job.location">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="companyname">Company:</label>
+    <div class="col-sm-7"> 
+      <input type="text" class="form-control" id="companyname" placeholder="Enter company" ng-model="job.companyname">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="salary">Salary:</label>
+    <div class="col-sm-7"> 
+      <input type="text" class="form-control" id="salary" placeholder="Enter salary" ng-model="job.salary">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="yrsOfExp">Experience Years:</label>
+    <div class="col-sm-7"> 
+      <input type="text" class="form-control" id="yrsOfExp" placeholder="Enter Years of Experience:" ng-model="job.yrsOfExp">
+    </div>
+  </div>
+  
+  
+  
+  
+   <div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-success" value="Add Job" ng-click="addJob()">Submit</button>
+    </div>
+  </div>
+</form>
+
+</body>
+</html>

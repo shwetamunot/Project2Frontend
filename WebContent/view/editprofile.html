@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
 <body>
 <div style="color:red" ng-if="error.code==1">{{error.message}}</div>
 
@@ -9,7 +13,7 @@
   <div style="color:red" ng-if="error.code==2">{{error.message}}</div>
     <label class="control-label col-sm-2" for="username">Username:</label>
     <div class="col-sm-7">
-      <input type="text" class="form-control" id="username" placeholder="Enter username" ng-model="user.username">
+      <input type="text" class="form-control" id="username" placeholder="Enter username" ng-model="user.username" disabled>
     </div>
   </div>
   <div class="form-group">
@@ -57,11 +61,11 @@
   </div>
    <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-success" value="Register" ng-click="registerUser()">Submit</button>
+      <button type="submit" class="btn btn-success" value="Update" ng-click="editUserProfile()">Submit</button>
     </div>
   </div>
 </form>
+
+
 </body>
 </html>
-
-

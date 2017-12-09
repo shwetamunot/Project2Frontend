@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+ <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>JobTitle</th>
+        <th>SkillRequired</th>
+        <th>PostedOn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="job in jobs">
+        <td>{{job.jobTitle}}</td>
+        <td>{{job.skillsRequired}}</td>
+        <td>{{job.postedOn|date:'medium'}}</td>
+      <td><button type="button" class="btn btn-info" ng-click="getJob(job.id)">View</button></td>
+      </tr>
+      </tbody>
+      </table>
+</div>
+<div ng-show="showDetails">
+
+<h3>Job Details</h3>
+
+<b>Job Title:</b>{{job.jobTitle}}<br>
+<b>Job Description:</b>{{job.jobDescription}}<br>
+<b>Skill Required:</b>{{job.skillsRequired}}<br>
+<b>Location:</b>{{job.location}}<br>
+<b>Company:</b>{{job.companyname}}<br>
+<b>Posted On:</b>{{job.postedOn|date:'medium'}}<br>
+<b>ExperienceYear:</b>{{job.yrsOfExp}}<br>
+</div>
+</body>
+</html>
