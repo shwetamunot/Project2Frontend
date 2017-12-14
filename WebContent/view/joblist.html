@@ -3,9 +3,30 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style>
+thead:hover {
+          background-color:yellow;
+        } 
+
+tr:hover {
+          background-color:blue;
+        } 
+                    
+</style>
 </head>
 <body>
 <div class="container">
+  <div class="col-sm-3">
+     <div class="input-group">
+        <input type="text" class="form-control" ng-model="searches" placeholder="Search..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+    </div>
+    </div>
+     
  <table class="table table-hover">
     <thead>
       <tr>
@@ -15,7 +36,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="job in jobs">
+      <tr ng-repeat="job in jobs | filter:searches">
         <td>{{job.jobTitle}}</td>
         <td>{{job.skillsRequired}}</td>
         <td>{{job.postedOn|date:'medium'}}</td>

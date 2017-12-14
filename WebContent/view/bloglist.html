@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+<div ng-show="currentUser.role=='Admin'">
+<h3>List of blogs waiting for approval</h3>
+<div ng-if="blogsWaitingForApproval.length==0">No Blogs waiting for Approved available</div>
+ <table ng-show="blogsWaitingForApproval.length>0" class="table table-hover">
+    <thead>
+      <tr>
+        <th>BlogTitle</th>
+        <th>Author</th>
+        <th>PostedOn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="blogPost in blogsWaitingForApproval">
+        <td><a href="#/admin/getblog/{{blogPost.id}}">{{blogPost.blogTitle}}</a></td>
+        <td>{{blogPost.postedBy.username}}</td>
+        <td>{{blogPost.postedOn|date:'medium'}}</td>
+      <!-- <td><button type="button" class="btn btn-info" ng-click="getJob(job.id)">View</button></td>
+       --></tr>
+      </tbody>
+      </table>
+      </div>
+</div>
+
+<div class="container">
+<h3>List og blogs approved</h3>
+<div ng-if="blogsApproved.length==0">No Blogs Approved</div>
+
+ <table ng show="blogsApproved.length>0" class="table table-hover">
+    <thead>
+      <tr>
+        <th>BlogTitle</th>
+        <th>Author</th>
+        <th>PostedOn</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="blogPost in blogsApproved">
+        <td><a href="#/getblog/{{blogPost.id}}">{{blogPost.blogTitle}}</a></td>
+        <td>{{blogPost.postedBy.username}}</td>
+        <td>{{blogPost.postedOn|date:'medium'}}</td>
+      <!-- <td><button type="button" class="btn btn-info" ng-click="getJob(job.id)">View</button></td>
+       --></tr>
+      </tbody>
+      </table>
+</div>
+
+</body>
+</html>

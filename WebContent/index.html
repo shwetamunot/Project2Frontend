@@ -27,7 +27,7 @@
       <li class="active"><a href="#">Home</a></li>
 <li><a href="" ng-show="currentUser.username">Welcome {{currentUser.username}}</a></li>
       <li><a href="#" ng-hide="currentUser.username">Contactus</a></li> 
-    <li><a href="" ng-show="currentUser.username" ng-click="logout()">Logout</a></li>
+   
     <li><a href="#/editprofile" ng-show="currentUser.username">Edityourprofile</a></li>
           <li class="dropdown">
         <a class="dropdown-toggle" data-toggle="dropdown" ng-show="currentUser.username">Job
@@ -37,13 +37,21 @@
           <li><a href="#/getjobs">getAllJob</a></li>
           </ul>
       </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" ng-show="currentUser.username">Blogs
+                <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#/addblogs">Add Blog</a></li>
+          <li><a href="#/getblogs">get All Blogs</a></li>
+          </ul>
+      </li>
     
     </ul>
     
      <ul class="nav navbar-nav navbar-right">
       <li><a ng-hide="currentUser.username" href="#/registration"><span class="glyphicon glyphicon-user"></span>SignUp</a></li>
       <li><a ng-hide="currentUser.username" href="#/login"><span class="glyphicon glyphicon-log-in"></span>Signin</a></li>
-    
+    <li><a href="" ng-show="currentUser.username" ng-click="logout()"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li> 
     </ul>
   </div>
 </div>
@@ -77,6 +85,7 @@ src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-cookies.js">
 </script>
 
 
+
 <script  type="text/javascript" 
 src="js/app.js"></script>
 <script  type="text/javascript"
@@ -89,6 +98,19 @@ src="controllers/jobcontroller.js">
 </script>
 <script  type="text/javascript"
 src="services/jobservice.js"></script>
+
+<script  type="text/javascript"
+src="controllers/blogcontroller.js">
+</script>
+
+<script  type="text/javascript"
+src="controllers/blogdetailscontroller.js">
+</script>
+
+
+<script  type="text/javascript"
+src="services/blogservice.js"></script>
+
 
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
