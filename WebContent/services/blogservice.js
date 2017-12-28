@@ -17,5 +17,26 @@ var BASE_URL="http://localhost:8082/Proj2Middlewear"
 		return $http.get(BASE_URL+"/getblog/"+id)
 	}
 	
+	blogService.updateBlogPost=function(blogPost,rejectionReason){
+	if(rejectionReason==undefined)
+		return $http.put(BASE_URL+"/updateapprovalstatus?rejectionReason="+'Not Mentioned',blogPost)
+		else
+	    return $http.put(BASE_URL+"/updateapprovalstatus?rejectionReason="+rejectionReason,blogPost)
+	
+	}
+
+	blogService.userLikes=function(id)	{
+		return $http.get(BASE_URL+"/userLikes/"+id)
+	}
+
+	blogService.updateLikes=function(blogPost)
+	{
+		return $http.put(BASE_URL+"/updateLikes",blogPost)
+	}
+	blogService.addComment=function(commentText,id)
+	{
+		return $http.post(BASE_URL+"/addcomment?commentText="+commentText+'&id='+id)
+	}
+	
 	return blogService;
 })

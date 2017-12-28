@@ -17,22 +17,24 @@
 </div>
 </div>
 </div>
+{{error.message}}
 <form>
 <div class="radio">
- <label><input type="radio" name="optradio" ng-model="blogPost.approved" value="true">Approved</label>
- <label><input type="radio" name="optradio" ng-model="blogPost.approved" value="false">Reject</label>
+ <label><input type="radio" name="optradio" ng-model="blogPost.approved" value="true" ng-click="showRejectionTxt(false)">Approved</label>
+ <label><input type="radio" name="optradio" ng-model="blogPost.approved" value="false" ng-click="showRejectionTxt(true)">Reject</label>
 </div>
-<div class="form-group">
-    <label class="control-label col-sm-2" for="phonenumber">Enter Reason:</label>
+<div ng-show="isRejected" class="form-group">
+    <label class="control-label col-sm-2" for="rejectionReason">Enter Reason:</label>
     <div class="col-sm-7"> 
-      <input type="text" class="form-control" id="phonenumber" placeholder="Enter reason" ng-model="rejectionReason" required>
+      <input type="text" class="form-control" id="rejectionReason" placeholder="Enter reason" ng-model="rejectionReason">
     </div>
   </div>
  <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-success" value="Update" ng-click="UpdateBlogPost()">Submit</button>
+      <button type="submit" class="btn btn-success" value="Update" ng-click="updateBlogPost()">Submit</button>
     </div>
   </div>
 </form>
+
 </body>
 </html>

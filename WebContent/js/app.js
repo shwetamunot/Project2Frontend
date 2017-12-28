@@ -42,8 +42,13 @@ app.config(function($routeProvider){
 	templateUrl:'view/blogDetails.html',
 	controller:'BlogDetailControl'
 })
+.when('/home',{
+	templateUrl:'view/home.html',
+	controller:'HomeControl'
+})
 
-		.otherwise({templateUrl:'view/home.html'})
+
+		.otherwise({templateUrl:'view/home.html',controller:'HomeControl'})
 })	
 
 		

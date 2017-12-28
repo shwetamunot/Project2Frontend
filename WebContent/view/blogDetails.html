@@ -18,7 +18,33 @@
 </div>
 </div>
 </div>
-<b>Likes</b>
-
+<b>Likes</b>{{blogPost.likes}}
+<div ng-show="liked">
+<span class="glyphicon glyphicon-thumbs-up" style="color:blue" ng-click="updateLikes()"></span>
+</div>
+<div ng-show="!liked">
+<span class="glyphicon glyphicon-thumbs-up" style="color:black" ng-click="updateLikes()"></span>
+</div>
+<div>
+<div class="form-group">
+  <label for="comment">Comment:</label>
+  <textarea   id="comment" ng-model="commentText" rows="1" cols="30"></textarea>
+</div>
+<div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-success" value="Post Comment" ng-click="addComment()">Submit</button>
+    </div>
+  </div>
+</div>
+<div>
+<b><a href="" ng-click="showComments()">{{blogPost.blogComments.length}} comment</a></b>
+<ul ng-show="showComment" style="list-style:none">
+<li ng-repeat="comment in blogPost.blogComments">
+{{comment.commentText}}<br>
+<strong>Commented By</strong>{{comment.commentedBy.username}}<br>
+<strong>Commented On</strong>{{comment.commentedOn|date:'medium'}}
+</li>
+</ul>
+</div>
 </body>
 </html>
