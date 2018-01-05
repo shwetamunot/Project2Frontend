@@ -21,7 +21,7 @@ app.config(function($routeProvider){
 .when('/addjob',{
 	templateUrl:'view/addjob.html',
 	controller:'JobControl'
-})
+}) 
 .when('/getjobs',{
 	templateUrl:'view/joblist.html',
 		controller:'JobControl'
@@ -46,7 +46,18 @@ app.config(function($routeProvider){
 	templateUrl:'view/home.html',
 	controller:'HomeControl'
 })
+.when('/uploadpic',{
+	templateUrl:'view/profilepicture.html'
+})
 
+.when('/suggested',{
+	templateUrl:'view/suggestion.html',
+	controller:'FriendControl'
+		})
+.when('/friendlists',{
+   templateUrl:'view/friendlist.html',
+	   controller:'FriendControl'
+})
 
 		.otherwise({templateUrl:'view/home.html',controller:'HomeControl'})
 })	

@@ -14,6 +14,12 @@ homeService.getNotificationNotViewed=function(){
 	homeService.updateNotification=function(id){
 		return $http.put(BASE_URL +"/updatenotification/"+id)
 	}
+	homeService.getAllPendingRequests=function(){
+		return $http.get(BASE_URL +"/pendingrequests")
+	}
 	
+	homeService.updatePendingRequest=function(pendingrequest){
+		return $http.put(BASE_URL +"/updatependingrequest",pendingrequest)
+	}	
 	return homeService;
 })

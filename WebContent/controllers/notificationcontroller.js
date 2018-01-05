@@ -21,6 +21,7 @@ app.controller('HomeControl',function($rootScope,$location,HomeService){
 	if($rootScope.currentUser!=undefined)
 	{
 	getNotification()
+	getAllPendingRequests()
 	}
 	$rootScope.updatelength=function(){
 		$rootScope.notificationNotViewedLength=0
@@ -35,4 +36,24 @@ app.controller('HomeControl',function($rootScope,$location,HomeService){
 		
 	})
 	}
+	function getAllPendingRequests(){
+		HomeService.getAllPendingRequests().then(function(response){
+		$rootScope.pendingrequests=response.data
+		$rootScope.pendingrequestLength=$rootScope.pendingrequests.length
+		},function(response){
+			if(response.status==401)
+				$location.path('/login')		
+		})
+	}
+	$rootScope.updatePendingRequest=function(pendingrequest,updatedstatus){
+		pendingrequest.status=updatedstatus
+		HomeService.updatePendingRequest(pendingrequest).then(function(response){
+			getAllPendingRequests()
+		},function(response){
+		if(response.status==401)
+				$location.path('/login')		
+		
+		})
+	}
+	
 })
