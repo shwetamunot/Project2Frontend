@@ -1,4 +1,5 @@
 /**
+'
  * 
  */
 var app=angular.module('app',['ngRoute','ngCookies'])
@@ -57,6 +58,10 @@ app.config(function($routeProvider){
 .when('/friendlists',{
    templateUrl:'view/friendlist.html',
 	   controller:'FriendControl'
+})
+.when('/chat',{
+	templateUrl:'view/chatss.html',
+	controller:'ChatControl'
 })
 
 		.otherwise({templateUrl:'view/home.html',controller:'HomeControl'})

@@ -9,7 +9,7 @@ app.controller('JobControl',function($scope,JobService,$location){
 $location.path('/home')
 		},function(response){
 			if(response.status==401){
-				if(resonse.code==6)
+				if(response.code==6)
 				alert("access denied")
 				else{
 				$scope.error=response.data
